@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 CORS(app)
 
-API_KEY = "KEY"
+API_KEY = "YOUR_API_KEY"
 
 openai.api_key = API_KEY
 
@@ -16,11 +16,14 @@ openai.api_key = API_KEY
 def ask_openai():
     user_input = request.json.get('question')
 
-    response = openai.Completion.create(
-        model = "gpt-3-turbo",
-        messages = [{'role': 'user', 'content': user_input}]
+    response = openai.ChatCompletion.create(
+        model = "gpt-3.5-turbo",
+        messages=[{"role": "user", "content": user_input}]
     )
 
     text = response.choices[0].message['content']
     
     return jsonify({'answer': text})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)

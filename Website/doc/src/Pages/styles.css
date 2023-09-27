@@ -1,0 +1,20 @@
+html, body, #root, .gradientBackground {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.gradientBackground {
+    min-height: 100%;
+
+    background: hsla(0, 4%, 9%, 1);
+
+    background: linear-gradient(90deg, hsla(0, 4%, 9%, 1) 0%, hsla(298, 25%, 46%, 1) 50%, hsla(343, 88%, 63%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(0, 4%, 9%, 1) 0%, hsla(298, 25%, 46%, 1) 50%, hsla(343, 88%, 63%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(0, 4%, 9%, 1) 0%, hsla(298, 25%, 46%, 1) 50%, hsla(343, 88%, 63%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#181616", endColorstr="#925994", GradientType=1 );      
+}

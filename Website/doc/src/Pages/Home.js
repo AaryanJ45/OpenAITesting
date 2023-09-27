@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './styles.css';
+import { SearchInput } from './HomeElements';
 
 const Home = () => {
 
@@ -22,8 +24,7 @@ const Home = () => {
   }
    return (
         <div>
-            <p>HELLLOOO</p>
-            <input value={question} onChange={(e) => setQuestion(e.target.value)} placeholder='Ask Anything' />
+          <SearchInput value={question} onChange={(e) => setQuestion(e.target.value)} /> 
             <button onClick={askOpenAI} disabled={loading}>
                 {loading ? "Loading..." : "Ask OpenAI"}
             </button>
